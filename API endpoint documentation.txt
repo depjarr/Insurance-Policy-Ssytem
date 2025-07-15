@@ -1,0 +1,113 @@
+📡 API Endpoint Documentation
+
+Base URL:
+
+http://localhost:5218/api/policies
+Semua endpoint mengikuti konvensi RESTful, dan menggunakan JSON sebagai format data.
+
+atau bisa menggunakan http://localhost:5218/swagger/index.html
+
+📥 1. GET /api/policies
+Ambil semua data polis.
+
+Query Parameters (opsional):
+
+q → untuk pencarian berdasarkan nama, policy number, car brand/type
+
+Contoh:
+
+GET /api/policies?q=Toyota
+
+Response:
+
+[
+  {
+    "id": 1,
+    "policyNumber": "250713-001",
+    "beneficiaryName": "Siti",
+    "carBrand": "Toyota",
+    "carType": "Yaris",
+    "tsi": 100000000,
+    "premiumRate": 1.8,
+    "premiumAmount": 1800000,
+    "startDate": "2025-07-13",
+    "endDate": "2026-07-13"
+  }
+]
+
+🔍 2. GET /api/policies/search?keyword=...
+Cari polis berdasarkan kata kunci (case-insensitive).
+
+Contoh:
+
+GET /api/policies/search?keyword=yaris
+
+Response:
+Sama seperti endpoint /api/policies, tapi hanya data yang cocok.
+
+📊 3. GET /api/policies/count
+Mengambil jumlah total polis di database.
+
+Response:
+
+{ "count": 5 }
+
+📄 4. GET /api/policies/{id}
+Mengambil detail polis berdasarkan ID.
+
+Contoh:
+
+GET /api/policies/1
+
+Response:
+
+{
+  "id": 1,
+  "policyNumber": "250713-001",
+  ...
+}
+
+➕ 5. POST /api/policies
+Menambahkan polis baru.
+
+Request Body:
+
+{
+  "beneficiaryName": "Budi",
+  "carBrand": "Honda",
+  "carType": "Brio",
+  "tsi": 120000000,
+  "premiumRate": 1.5,
+  "startDate": "2025-07-13",
+  "endDate": "2026-07-13"
+}
+policyNumber dan premiumAmount akan di-generate otomatis di backend.
+
+Response:
+
+{
+  "id": 2,
+  "policyNumber": "250713-002",
+  ...
+}
+
+
+✏️ 6. PUT /api/policies/{id}
+Memperbarui polis berdasarkan ID.
+
+Request Body: Sama seperti POST, tapi wajib mencantumkan id yang sesuai.
+
+Contoh:
+
+PUT /api/policies/2
+
+🗑️ 7. DELETE /api/policies/{id}
+Menghapus polis berdasarkan ID.
+
+Contoh:
+
+DELETE /api/policies/2
+Response: 204 No Content jika berhasil.
+
+🔐 CORS Configuration
+CORS telah di-enable di backend agar frontend React (http://localhost:3000) bisa mengakses API ini.

@@ -1,0 +1,52 @@
+📊 Documentation of Premium Calculation Logic
+
+Perhitungan premi adalah inti dari sistem asuransi. 
+Tujuannya adalah untuk menentukan jumlah pembayaran premi berdasarkan nilai pertanggungan 
+(Total Sum Insured / TSI) dan premium rate yang ditentukan oleh perusahaan.
+
+🧮 Rumus Perhitungan
+
+Premium Amount = TSI × Premium Rate / 100
+TSI (Total Sum Insured): Nilai kendaraan yang diasuransikan (dalam rupiah).
+
+Premium Rate: Persentase yang ditetapkan oleh perusahaan asuransi (misal: 1.8%).
+
+Contoh Perhitungan:
+Jika TSI = 100.000.000 dan Premium Rate = 1.8%, maka:
+
+Premium Amount = 100.000.000 × 1.8 / 100 = 1.800.000
+
+🔐 Lokasi Perhitungan
+Perhitungan ini dilakukan di sisi backend untuk memastikan:
+
+✅ Keamanan (data tidak bisa dimanipulasi dari frontend)
+
+✅ Konsistensi (semua data dihitung dengan logika yang sama)
+
+✅ Validasi (mencegah nilai tidak valid)
+
+
+🧪 Validasi Input
+Sebelum melakukan perhitungan, backend memvalidasi input agar tidak terjadi kesalahan atau penyalahgunaan:
+
+
+if (input.TSI <= 0 || input.PremiumRate <= 0)
+{
+    return BadRequest("TSI dan Premium Rate harus lebih besar dari 0.");
+}
+
+Validasi ini memastikan:
+
+TSI tidak boleh nol atau negatif
+
+Premium Rate harus bernilai positif dan masuk akal
+
+⚙️ Implementasi Backend
+Perhitungan dilakukan di metode CalculatePremium() dalam PoliciesController.cs:
+
+private static decimal CalculatePremium(decimal tsi, decimal rate)
+{
+    return tsi * rate / 100;
+}
+
+Metode ini dipanggil setiap kali data ditambahkan (POST) atau diperbarui (PUT):

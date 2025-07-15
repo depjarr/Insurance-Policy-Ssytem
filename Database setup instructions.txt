@@ -1,0 +1,45 @@
+🗄️ Database Setup Instructions
+
+Menggunakan SQLite
+
+Tidak perlu setup manual, database langsung dibuat otomatis lewat EF Core saat backend dijalankan
+
+Nama file: policies.db
+
+📁 Lokasi
+File policies.db akan muncul otomatis di root folder backend, sejajar dengan Program.cs.
+
+🔧 Konfigurasi Penting
+Di appsettings.json:
+
+"ConnectionStrings": {
+  "Default": "Data Source=insurance.db"
+}
+Di Program.cs:
+
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlite(builder.Configuration.GetConnectionString("Default")));
+Inisialisasi otomatis:
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+}
+
+✅ Langkah Lengkap
+
+1. Pastikan file insurance.db belum ada (kalau mau mulai dari awal)
+
+2. Jalankan dotnet run
+
+3. EF Core akan buat database dan tabel Policies secara otomatis
+
+4. Selesai! Data bisa langsung diakses lewat frontend
+
+
+💡 Catatan Tambahan
+
+- Pada database ini sudah di-setup CORS agar React bisa akses API
+
+- Semua operasi (GET, POST, PUT, DELETE) sudah ada
