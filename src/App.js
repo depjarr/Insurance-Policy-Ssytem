@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+// Mengimpor komponen PolicyList dari file PolicyList.js di folder yang sama
+import PolicyList from "./PolicyList";
+
+// Mengimpor file CSS untuk memberikan styling ke komponen App
 import './App.css';
 
+// Mendefinisikan komponen utama App sebagai fungsi (functional component)
 function App() {
   return (
+    // Menggunakan className "App" agar styling dari App.css bisa diterapkan
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Merender komponen PolicyList, yang mungkin berisi daftar polis asuransi */}
+      <PolicyList />
     </div>
   );
 }
 
+// Mengekspor komponen App agar bisa digunakan di index.js atau file lainnya
 export default App;

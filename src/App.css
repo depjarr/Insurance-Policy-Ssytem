@@ -1,38 +1,45 @@
+/* Mengatur teks di dalam elemen dengan class .App agar berada di tengah secara horizontal */
 .App {
   text-align: center;
 }
 
+/* Mengatur ukuran logo dan menonaktifkan interaksi pointer (seperti klik atau hover) */
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 40vmin; /* 40% dari ukuran viewport minimal (vmin = min(vw, vh)) */
+  pointer-events: none; /* Logo tidak bisa diklik atau dipilih */
 }
 
+/* Mengatur animasi hanya jika user tidak memilih pengurangan animasi di setting OS */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
+    /* Menambahkan animasi berputar terus menerus selama 20 detik */
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Mengatur header aplikasi */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #282c34; /* Warna abu gelap */
+  min-height: 100vh; /* Minimal tinggi 100% dari viewport */
+  display: flex; /* Mengaktifkan Flexbox untuk pengaturan layout */
+  flex-direction: column; /* Susun anak-anak elemen secara vertikal */
+  align-items: center; /* Pusatkan elemen secara horizontal */
+  justify-content: center; /* Pusatkan elemen secara vertikal */
+  font-size: calc(10px + 2vmin); /* Ukuran teks responsif berdasarkan ukuran layar */
+  color: white; /* Warna teks putih */
 }
 
+/* Mengatur tampilan link dalam aplikasi */
 .App-link {
-  color: #61dafb;
+  color: #61dafb; /* Warna biru muda khas React */
 }
 
+/* Keyframes untuk animasi putaran logo */
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Mulai dari 0 derajat */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Berputar penuh 360 derajat */
   }
 }

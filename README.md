@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Sistem Manajemen Polis Asuransi Kendaraan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Halo! Saya bikin aplikasi ini buat ngelola data polis asuransi kendaraan secara praktis. Aplikasinya saya buat pakai **React** di bagian frontend dan **.NET Web API** di backend. Cocok banget buat simulasi sistem asuransi, misalnya di perusahaan kayak **Tob Insurance**.
 
-## Available Scripts
+## Cara Jalanin Aplikasi
 
-In the project directory, you can run:
+Setelah download atau clone project ini, tinggal buka terminal di folder project, terus jalankan perintah-perintah di bawah ini:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Buat ngejalanin aplikasi dalam mode pengembangan.  
+Buka [http://localhost:3000](http://localhost:3000) di browser buat lihat tampilannya.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Nanti halaman bakal otomatis refresh kalau saya (atau kamu) ngedit kode.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Buat ngejalanin unit test yang udah saya siapkan.  
+Pakai React Testing Library, jadi gampang buat cek tampilan atau interaksi di komponen.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Buat generate versi produksi dari aplikasi.  
+File-nya otomatis dioptimalkan, udah siap buat di-upload ke server hosting atau cloud.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Kalau pengin ngubah konfigurasi bawaan dari React, bisa pakai perintah ini.  
+Tapi hati-hati ya, sekali eject, nggak bisa dibalikin.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Teknologi yang Dipakai
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Frontend**: React.js
+- **Backend**: ASP.NET Core Web API
+- **Database**: MySQL
+- **Library**:
+  - Axios (buat konek ke API)
+  - SheetJS (buat download data ke Excel)
+  - React Icons (biar tombol edit & hapus pakai ikon)
+  - React Testing Library (buat ngetes komponen)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Fitur Utama
 
-## Learn More
+- Tambah, edit, hapus data polis
+- Nomor polis digenerate otomatis dari backend
+- Premi dihitung otomatis berdasarkan TSI & rate
+- Cari data polis pakai keyword (nama, mobil, dll)
+- Export data ke Excel (.xlsx)
+- Tampilan modern & responsif
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Kenapa Saya Bikin Aplikasi Ini?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Proyek ini merupakan test koding yang diberikan oleh PT Asuransi Total Bersama.
 
-### Code Splitting
+## Kalau Mau Belajar Lebih Lanjut
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Kalau kamu pengin tahu lebih banyak soal teknologi yang saya pakai, ini beberapa link yang bisa dibaca:
 
-### Analyzing the Bundle Size
+- [React Docs](https://reactjs.org/)
+- [Create React App Docs](https://create-react-app.dev/)
+- [ASP.NET Core Docs](https://learn.microsoft.com/en-us/aspnet/core/)
+- [SheetJS Docs](https://sheetjs.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
